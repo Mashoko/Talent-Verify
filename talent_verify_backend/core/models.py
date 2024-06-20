@@ -27,7 +27,7 @@ class Department(models.Model):
         return f"{self.company.name} - {self.name}"
 
 class Employee(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    CustomUser = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='employees')
     department = models.ForeignKey(Department, on_delete=models.CASCADE, related_name='employees')
     role = models.CharField(max_length=100)
@@ -40,14 +40,7 @@ class Employee(models.Model):
     
     # models.py
 
-class Employee(models.Model):
-    name = models.CharField(max_length=100)
-    employer = models.ForeignKey(Company, on_delete=models.CASCADE)
-    position = models.CharField(max_length=100)
-    department = models.ForeignKey(Department, on_delete=models.CASCADE)
-    start_date = models.DateField()
-    end_date = models.DateField(blank=True, null=True)
-    duties = models.TextField()
+
 
     def __str__(self):
         return self.name
