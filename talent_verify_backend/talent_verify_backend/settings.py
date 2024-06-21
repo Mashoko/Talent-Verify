@@ -34,8 +34,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     
-    'django.contrib.admin',
     'core',
+    'django.contrib.admin',
     'django.contrib.auth',
     'encrypted_model_fields',
     'django.contrib.contenttypes',
@@ -59,7 +59,7 @@ ROOT_URLCONF = 'talent_verify_backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'talent_verify_frontend/build')],
+        'DIRS': [os.path.join(BASE_DIR, 'talent_verify_frontend\build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -137,6 +137,7 @@ fernet_key = key.decode()
 
 FIELD_ENCRYPTION_KEY = fernet_key
 
+ 
 
 
 

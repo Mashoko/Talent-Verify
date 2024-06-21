@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractUser
 from encrypted_model_fields.fields import EncryptedCharField
+from django.conf import settings
 
 class CustomUser(AbstractUser):
     # add custom fields if needed
